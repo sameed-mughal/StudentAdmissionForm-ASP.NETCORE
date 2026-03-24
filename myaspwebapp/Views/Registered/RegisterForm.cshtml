@@ -1,0 +1,128 @@
+﻿@model myaspwebapp.Models.Registered
+
+@if(ViewBag.Message != null)
+{
+    @* <div class="alert alert-success">
+        @ViewBag.Message
+    </div> *@
+
+    <script>
+        alert("@ViewBag.Message")
+    </script>
+}
+
+
+<section class="enrollment-form">
+
+    <div class="enrollment-section animate__animated animate__fadeInUp">
+        <div class="text-center mb-4">
+            <h2 class="form-title">Student Enrollment Form</h2>
+            <p class="text-muted">Please fill in the required information below</p>
+        </div>
+
+        <form method="post">
+            <div class="row g-4">
+
+                <!-- Row 1 -->
+                <div class="col-md-4">
+                    <label class="form-label">First Name *</label>
+                    <input type="text" asp-for="firstname" class="form-control" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Last Name *</label>
+                    <input type="text" asp-for="lastname" class="form-control" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Father / Mother Name *</label>
+                    <input type="text" asp-for="gardianName" class="form-control" required>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="col-md-3">
+                    <label class="form-label">Date of Birth *</label>
+                    <input type="date" asp-for="dob" class="form-control" required>
+                </div>
+
+                <div class="col-md-3">
+                    <label class="form-label">Age</label>
+                    <input type="number" asp-for="age" class="form-control">
+                </div>
+
+                <div class="col-md-3">
+                    <label class="form-label">Gender</label>
+                    <select class="form-select" asp-for="gender">
+                        @* <option selected disabled>Select</option> *@
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="col-md-3">
+                    <label class="form-label">Education *</label>
+                    <input type="text" asp-for="education" class="form-control" required>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="col-md-6">
+                    <label class="form-label">Address *</label>
+                    <input type="text" asp-for="address" class="form-control" required>
+                </div>
+
+                <div class="col-md-3">
+                    <label class="form-label">Contact # *</label>
+                    <input type="tel" asp-for="contact" class="form-control" required>
+                </div>
+
+                <div class="col-md-3">
+                    <label class="form-label">Telephone #</label>
+                    <input type="tel" asp-for="phone" class="form-control">
+                </div>
+
+                <!-- Row 4 -->
+                <div class="col-md-4">
+                    <label class="form-label">Email *</label>
+                    <input type="email" asp-for="email" class="form-control" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Interested Course *</label>
+                    <select class="form-select" required asp-for="interrestCourse">
+                        <option value="Web Development">Web Development</option>
+                        <option value="Data Science">Data Science</option>
+                        <option value="Artifical Intelligence">Artifical Intelligence</option>
+                    </select>
+                </div>
+
+                <div class="col-md-2">
+                    <label class="form-label">Duration *</label>
+                    <select class="form-select" required asp-for="duration">
+                        @* <option selected disabled>Select</option> *@
+                        <option value="3 Months">3 Months</option>
+                        <option value="6 Months">6 Months</option>
+                        <option value="1 Year">1 Year</option>
+                    </select>
+                </div>
+
+                <div class="col-md-2">
+                    <label class="form-label">Reference</label>
+                    <input type="text" asp-for="reference" class="form-control">
+                </div>
+
+            </div>
+
+            <div class="text-center mt-5">
+                <button type="submit" class="btn btn-primary">
+                    Submit Enrollment
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+
+
+
+</section>
